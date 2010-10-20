@@ -4,7 +4,7 @@ require 'json'
 
 TEMP_FILE = "/tmp/grabscreen.#{$$}.png"
 GROWL_NOTIFY = "/usr/local/bin/growlnotify"
-CURL = "/opt/local/bin/curl"
+CURL = `which curl`.chomp
 IMGUR_API_KEY = "42ba602ad2243f4e866a782a09455b8d"
 IMGUR_UPLOAD_URL = "http://imgur.com/api/upload.json"
 
