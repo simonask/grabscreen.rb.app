@@ -31,7 +31,7 @@ if File.exist?(TEMP_FILE)
 		result = JSON.parse json
 		begin
 			image_url = result["rsp"]["image"]["original_image"]
-			`echo \"#{image_url}\" | pbcopy`
+			IO.popen("pbcopy", "w") { |io| io.write image_url }
 			notify "Screenshot uploaded!", image_url, TEMP_FILE
 			File.unlink(TEMP_FILE)
 		rescue
