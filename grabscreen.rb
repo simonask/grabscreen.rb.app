@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 require 'rubygems'
 require 'json'
 
@@ -10,7 +11,7 @@ IMGUR_UPLOAD_URL = "http://imgur.com/api/upload.json"
 
 def notify(title, body, image = nil)
 	if File.exist?(GROWL_NOTIFY)
-		command = "#{GROWL_NOTIFY} -t \"#{title}\" -m \"#{body}\" -d grabscreen.rb"
+		command = "#{GROWL_NOTIFY} -t \"#{title}\" -m \"#{body}\" -d grabscreen.rb -n grabscreen"
 		if image
 			command += " --image \"#{image}\""
 		end
